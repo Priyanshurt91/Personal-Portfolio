@@ -245,7 +245,8 @@ const projects = [
       },
     ],
     image: kneeOsteoarthritis,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/Priyanshurt91/knee-oa-severity-swin",
+    live_source_link: "https://huggingface.co/spaces/PriyanshuRaut96/knee-oa-severity-swin",
   },
   {
     name: "AI-Based Seva Kendra Form Automation System",
@@ -266,7 +267,8 @@ const projects = [
       },
     ],
     image: sevaKendraSystem,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/Priyanshurt91/Seva_Form_AI",
+    //live_source_link: "https://google.com",
   },
   {
     name: "Glaucoma Detection Using Transformers",
@@ -291,7 +293,8 @@ const projects = [
       },
     ],
     image: glaucomaDetection,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/Priyanshurt91/Glaucoma-Detector",
+    live_source_link: "https://huggingface.co/spaces/PriyanshuRaut96/Glaucoma-Detector",
   },
 ];
 
