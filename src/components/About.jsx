@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Tilt } from "react-tilt";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -35,6 +35,45 @@ const ServiceCard = ({ index, title, icon }) => {
     },
     index * 0.2
   );
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 500px)");
+    setIsMobile(mediaQuery.matches);
+
+    const handleMediaQueryChange = (event) => {
+      setIsMobile(event.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    };
+  }, []);
+
+  if (isMobile) {
+    return (
+      <div className="xs:w-[250px] w-full">
+        <div
+          ref={cardRef}
+          className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
+        >
+          <div className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col">
+            <img
+              src={icon}
+              alt="web-development"
+              className="w-16 h-16 object-contain"
+            />
+            <h3 className="text-white text-[20px] font-bold text-center">
+              {title}
+            </h3>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <Tilt className="xs:w-[250px] w-full">
